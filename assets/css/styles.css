@@ -1,0 +1,129 @@
+/* Estilos generales */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #051215;
+}
+
+/* Logo animado 
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  animation: spin 6s infinite linear;
+}
+*/
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contenedor de tarjetas */
+.container {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  transition: all 400ms;
+}
+
+.card {
+  flex: 1;
+  height: 100%;
+  transition: all 400ms;
+  cursor: pointer;
+}
+
+.card > img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:nth-child(odd) {
+  translate: 0 -20px;
+}
+
+.card:nth-child(even) {
+  translate: 0 20px;
+}
+
+.container:hover .card:not(:hover) {
+  filter: grayscale(100%);
+}
+
+.card:hover {
+  flex: 3;
+}
+
+/* Media Queries */
+
+/* Dispositivos móviles (hasta 600px de ancho) */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card {
+    height: 200px;
+  }
+}
+
+/* Tablets (600px a 1024px de ancho) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card {
+    height: 250px;
+  }
+}
+
+/* Escritorio (más de 1024px de ancho) */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    height: 500px;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
+
+
+/* Resolución específica (576px a 1108px de ancho) */
+@media (min-width: 576px) and (max-width: 1108px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card {
+    height: 250px;
+  }
